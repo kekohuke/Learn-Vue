@@ -21,7 +21,7 @@ jobs:
               with:
                   node-version: '14.x'
 
-            - name: npm install, build, and test
+            - name: yarn install, build, and test
               run: |
                   yarn install
                   yarn build --if-present
@@ -30,7 +30,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: node-app
-                  path: .
+                  path: dist/
 
     deploy:
         runs-on: ubuntu-latest
